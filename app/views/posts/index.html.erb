@@ -1,2 +1,7 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<% @posts.each do |post| %>
+  <%= image_tag post.get_image %>
+  <p><%= image_tag 'no_image.jpg' %>
+  <p>店名：<%= post.shop_name %></p>
+  <p>コメント:<%= post.body %></p>
+  <p>ユーザーネーム<%= post.user.name %></p>
+<% end %>  

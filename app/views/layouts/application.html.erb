@@ -37,8 +37,10 @@
       </nav>
     </header>
     <body>
-     <%= notice %>
-     <%= alert %>
+      <div>
+       <%= flash[:notice] %>
+       <%= flash[:alert] %>
+      </div>
     <%= yield %>
     </body>
 

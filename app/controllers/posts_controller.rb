@@ -5,9 +5,9 @@ class PostsController < ApplicationController
 
   def create
     post = Post.new(post_params)
-    post.user.id = current_user.id
+    post.user_id = current_user.id
     post.save
-    redirect_to root_path
+    redirect_to posts_path
   end
 
   def index

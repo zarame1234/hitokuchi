@@ -1,7 +1,12 @@
 <div>
   <%=  image_tag @user.get_profile_image(100,100) %>
+  <h3>名前</h3>
   <%= @user.name %>
+  <h3>自己紹介</h3>
   <%= @user.introduction %>
+  <% if @user == current_user %>
+    <%= link_to "プロフィール更新", edit_user_path(current_user) %>
+  <% end %>
 </div>
 
 <% @posts.each do |post| %>

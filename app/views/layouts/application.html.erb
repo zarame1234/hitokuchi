@@ -24,9 +24,17 @@
                 <%= link_to "Logout", destroy_user_session_path, method: :delete %>
               </li>
               <li>
-              <%= link_to '新規投稿', new_post_path %>
-            </li>
+                <%= link_to "マイページ", post_path(current_user) %>
+              <li>
+              <li>
+                <%= link_to "投稿一覧", posts_path %>
+              </li>
+                <%= link_to '新規投稿', new_post_path %>
+              </li>
             <% else %>
+              <li>
+                <%= link_to "トップページ", root_path %>
+              </li>
               <li>
                 <%= link_to "Sign_up", new_user_registration_path %>
               </li>

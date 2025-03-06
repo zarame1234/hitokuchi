@@ -4,7 +4,7 @@
   <%= @user.name %>
   <h3>自己紹介</h3>
   <%= @user.introduction %>
-  <% if @user == current_user %>
+  <% if @user.email != "guest@example.com" && (@user == current_user) %>
     <%= link_to "プロフィール更新", edit_user_path(current_user) %>
   <% end %>
 </div>

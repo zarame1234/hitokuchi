@@ -9,6 +9,12 @@
   </div>
 
   <div class="field">
+    <%= f.label :handle_name %><br>
+    <%= f.text_field :handle_name %>
+    <p>ネット上に表示させる名前を入力ください</p>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autocomplete: "email" %>
   </div>

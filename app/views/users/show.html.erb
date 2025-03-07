@@ -13,7 +13,7 @@
 <div>
   <p>店名：<%= post.shop_name %></p>
   <%= link_to post_path(post.id) do %>
-    <%= image_tag post.get_image %>
+    <%= image_tag post.get_image(100,100) %>
   <% end %>
 </div>
 <% end %>

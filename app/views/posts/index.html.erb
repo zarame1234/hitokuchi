@@ -1,6 +1,6 @@
 <% @posts.each do |post| %>
   <%= link_to post_path(post.id) do %>
-    <%= image_tag post.get_image %>
+    <%= image_tag post.get_image(200,200) %>
   <% end %>
   <p><%= image_tag post.user.get_profile_image(100,100) %></p>
   <p>店名：<%= post.shop_name %></p>

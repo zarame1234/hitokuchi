@@ -1,14 +1,24 @@
-<div>
-  <%=  image_tag @user.get_profile_image(100,100) %>
-  <h3>名前</h3>
-  <%= @user.name %>
-  <h3>自己紹介</h3>
-  <%= @user.introduction %>
-  <% if @user.email != "guest@example.com" && (@user == current_user) %>
+<div class=" mx-5 justify-content-center">
+<div class="container d-flex">
+  <div class="row">
+    <div class="colum-md-4">
+    <%=  image_tag @user.get_profile_image(100,100) %>
+    </div>
+    <div class="colum-md-8">
+      <p>name</p>
+      <%= @user.name %>
+      <p>自己紹介</p>
+      <%= @user.introduction %>
+    </div>
+    <div>
+    <% if @user.email != "guest@example.com" && (@user == current_user) %>
     <%= link_to "プロフィール更新", edit_user_path(current_user) %>
-  <% end %>
+    <% end %>
+    <div>
+</div>
 </div>
 
+<div>
 <% @posts.each do |post| %>
 <div>
   <p>店名：<%= post.shop_name %></p>
@@ -17,6 +27,6 @@
   <% end %>
 </div>
 <% end %>
-  
+</div>  
   
 

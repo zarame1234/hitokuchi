@@ -1,5 +1,5 @@
 
-  <%= image_tag @post.get_image %>
+  <%= image_tag @post.get_image(400,300) %>
   <p>店名：<%= @post.shop_name %></p>
   <p>コメント：<%= @post.body %></p>
   <%= image_tag @post.user.get_profile_image(100,100) %>

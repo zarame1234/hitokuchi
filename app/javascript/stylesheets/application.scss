@@ -1,1 +1,15 @@
 @use '~bootstrap/scss/bootstrap';
+
+
+header, footer {
+  font-family: "Segoe Print", sans-serif;
+}
+
+
+ body {
+  background-color: ghostwhite;
+ }
+
+ footer {
+  background-color: rosybrown;
+ }

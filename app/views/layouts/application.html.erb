@@ -13,7 +13,7 @@
   </head>
 
   <body class="d-flex flex-column vh-100 ">
-    <header>
+    <header class="bg-opacity-10">
       <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
         <div class="container text_white">
           <a class="navbar-brand p-3 " href="/">hitokuchi</a>
@@ -52,7 +52,7 @@
         </div>
       </nav>
     </header>
-    <main class="mb-auto m-5">
+    <main class="mb-auto m-3">
       <div>
        <%= flash[:notice] %>
        <%= flash[:alert] %>
@@ -60,7 +60,7 @@
     <%= yield %>
     </main>
 
-    <footer class="text_white pt-5 pb-4">
+    <footer class="bg-seccondry pt-5 pb-4">
       <div class="container">
         <div class="row no-gutters">
           <div class="col-md-4">

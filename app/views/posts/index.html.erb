@@ -1,9 +1,13 @@
-<% @posts.each do |post| %>
-  <%= link_to post_path(post.id) do %>
-    <%= image_tag post.get_image(200,200) %>
-  <% end %>
-  <p><%= image_tag post.user.get_profile_image(100,100) %></p>
-  <p>店名：<%= post.shop_name %></p>
-  <p>コメント:<%= post.body %></p>
-  <p>ユーザーネーム<%= post.user.name %></p>
+<h1 class="fs-4">投稿一覧</h1>
+<div class="d-flex flex-wrap ">
+  <% @posts.each do |post| %>
+    <div class="m-1" >
+      <%= link_to post_path(post.id) do %>
+        <%= image_tag post.get_image(200,200), class:"rounded" %>
+      <% end %>
+    <p><%= image_tag post.user.get_profile_image(50,50) %></p>
+    <p>店名：<%= post.shop_name %></p>
+    <p class="overflow-hidden text-wrap lh-1">コメント:<%= post.body %></p>
+  </div>
 <% end %>  
+</div>

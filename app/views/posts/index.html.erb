@@ -1,13 +1,15 @@
-<h1 class="fs-4">投稿一覧</h1>
-<div class="d-flex flex-wrap ">
+<div class="d-flex flex-wrap">
   <% @posts.each do |post| %>
-    <div class="m-1" >
+    <div class="card w-5 m-1">
+    <div class="card-body">
       <%= link_to post_path(post.id) do %>
-        <%= image_tag post.get_image(200,200), class:"rounded" %>
+        <%= image_tag post.get_image(200,200), class:"rounded-top" %>
       <% end %>
-    <p><%= image_tag post.user.get_profile_image(50,50) %></p>
-    <p>店名：<%= post.shop_name %></p>
-    <p class="overflow-hidden text-wrap lh-1">コメント:<%= post.body %></p>
-  </div>
-<% end %>  
+      
+        <p><%= image_tag post.user.get_profile_image(50,50) %></p>
+        <p class="card-text"><%= post.shop_name %></p>
+        <p class="card-text"><%= post.body %></p>
+      </div>
+    </div>
+  <% end %>  
 </div>

@@ -1,18 +1,18 @@
 <div class="d-flex container" >
   <div class="row mx-auto" >
-  <div class="col-md-6">
-    <%= image_tag @post.get_image(400,300) %>
-  </div>
-  <div class="col-md-6">
-    <div class=" border-bottom border-secondary">
-      <%= image_tag @post.user.get_profile_image(50,50) %>
-      <%= @post.user.name %>
+    <div class="col-md-6">
+      <%= image_tag @post.get_image(400,300) %>
     </div>
-    <div class="border-bottom-dark">
-      <p>店名：<%= @post.shop_name %></p>
-      <p>コメント：<%= @post.body %></p>
-       <p>投稿日：<%= @post.created_at.strftime('%Y/%m/%d') %></p>
-    <div>
+    <div class="col-md-6">
+      <div class=" border-bottom border-secondary">
+        <%= image_tag @post.user.get_profile_image(50,50) %>
+        <%= @post.user.name %>
+      </div>
+      <div class="border-bottom-dark">
+        <p>店名：<%= @post.shop_name %></p>
+        <p>コメント：<%= @post.body %></p>
+        <p>投稿日：<%= @post.created_at.strftime('%Y/%m/%d') %></p>
+      <div>
     <div>
       <% if @post.user == current_user %>
         <%= link_to "編集", edit_post_path(@post) %>

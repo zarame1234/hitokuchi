@@ -1,26 +1,33 @@
 
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4 mb-5">
-          <div>
-            <%=  image_tag @user.get_profile_image(100,100) %>
-          </div>
-          <div>
-            <p>name :  <%= @user.name %></p>
-            <p>自己紹介 :   <%= @user.introduction %></p>
-            <% if @user.email != "guest@example.com" && (@user == current_user) %>
-            <%= link_to "プロフィール更新", edit_user_path(current_user) %>
-            <% end %>
+      <div class="col-md-3 mb-3">
+          <div class="row">
+            <div class="col-4 col-sm-4 col-md-12">
+              <%=  image_tag @user.get_profile_image(100,100), class:"rounded" %>
+            </div>
+            <div classs="col-8 col-md-8 col-md-12">
+              <p>
+                <i class="fa-regular fa-circle-user"></i>
+                <%= @user.name %>
+              </p>
+              <p>自己紹介</p>
+              <p><%= @user.introduction %></p>
+              <% if @user.email != "guest@example.com" && (@user == current_user) %>
+              <%= link_to "プロフィール編集", edit_user_path(current_user), class: "btn btn-info btn-sm" %>
+              <% end %>
+            </div>
           </div>
       </div>
   
-      <div class="d-flex flex-wrap col-md-8" >
+      <div class="d-flex flex-wrap col-md-9" >
         <% @posts.each do |post| %>
-          <div class="m-1 card" >
+          <div class="card" >
             <div class="card-body" >
               <%= link_to post_path(post) do %>
-                <%= image_tag post.get_image(200,200), class:"rounded-top" %>
+                <%= image_tag post.get_image(200,200), class:"rounded" %>
               <% end %><br>
+              <i class="fa-regular fa-font-awesome"></i>
               <%= post.shop_name %>
             </div>
           </div>

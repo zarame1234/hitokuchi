@@ -3,11 +3,13 @@
     <div class="card w-5 m-1">
     <div class="card-body">
       <%= link_to post_path(post.id) do %>
-        <%= image_tag post.get_image(200,200), class:"rounded-top" %>
+        <%= image_tag post.get_image(200,200), class:"rounded" %>
       <% end %>
-      
-        <p><%= image_tag post.user.get_profile_image(50,50) %></p>
-        <p class="card-text"><%= post.shop_name %></p>
+      <div><%= image_tag post.user.get_profile_image(50,50) %></div>
+      <div class="card-text">
+        <i class="fa-regular fa-font-awesome"></i>
+        <%= post.shop_name %></p>
+      </div>
         <p class="card-text"><%= post.body %></p>
       </div>
     </div>

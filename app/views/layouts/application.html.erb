@@ -13,13 +13,16 @@
   </head>
 
   <body class="d-flex flex-column vh-100">
-    <header class="bg-opacity-10">
+    <header>
       <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
         <div class="container text_white">
-          <a class="navbar-brand p-3 " href="/">hitokuchi</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+          <a class="navbar-brand p-3 " href="/">
+            <i class="fa-regular fa-map"></i>
+            hitokuchi
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav ml-auto">
@@ -28,7 +31,7 @@
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
               </li>
               <li class="nav-item mr-3">
-                <%= link_to "マイページ", user_path(current_user), class:"link-secondary" %>
+                <%= link_to "マイページ", user_path(current_user) %>
               <li>
               <li class="nav-item mr-3">
                 <%= link_to "一覧", posts_path %>
@@ -52,7 +55,7 @@
       </nav>
     </header>
 
-    <main class="mb-auto m-3">
+    <main class="mb-auto m-2">
       <div>
        <%= flash[:notice] %>
        <%= flash[:alert] %>
@@ -60,7 +63,7 @@
     <%= yield %>
     </main>
 
-    <footer class="bg-info text-white mt-5 pt-5 pb-4">
+    <footer class="bg-info text-white mt-4 py-4">
       <div class="container">
         <div class="row no-gutters">
           <div class="col-md-4">

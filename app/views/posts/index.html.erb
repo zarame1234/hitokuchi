@@ -1,9 +1,9 @@
 <div class="d-flex flex-wrap">
   <% @posts.each do |post| %>
-    <div class="card w-5 m-1">
+    <div class="card">
     <div class="card-body">
       <%= link_to post_path(post.id) do %>
-        <%= image_tag post.get_image(200,200), class:"rounded" %>
+        <%= image_tag post.get_image(150,150), class:"rounded" %>
       <% end %>
       <div><%= image_tag post.user.get_profile_image(50,50) %></div>
       <div class="card-text">

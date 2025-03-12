@@ -1,17 +1,25 @@
-<div class="container mx-auto background">
-  <div class="row">
-  <div class="col-sm-6 col-md-8 about">
-  box
+<div class="top-visual">
+  <div class="about">
+    box
   </div>
-  <div class="col-sm-6 col-md-4 btn-wrapper">
-  <div>
-    <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, class: "btn btn-info btn-sm btn-block rounded-pill mb-3  sign_in", method: :post %>
-  </div>
-  <div>
-    <%= link_to "ログイン", new_user_session_path, class: "btn btn-info btn-sm btn-block rounded-pill mb-3" %>
-  </div>
-  <div>
-    <%= link_to "新規登録", new_user_registration_path, class: "btn btn-info btn-sm btn-block rounded-pill mb-3" %>
-  </div>
+</div>
+<div>
+  <div class="btn-wrapper h-50 ">
+    <% if user_signed_in? %>
+      <div>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-info btn-sm btn-block rounded-pill col-5" %>
+      </div>
+    <% else %>
+      <div>
+        <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, class: "btn btn-info btn-sm btn-block rounded-pill col-5 my-3 sign_in", method: :post %>
+      </div>
+      <div>
+        <%= link_to "ログイン", new_user_session_path, class: "btn btn-info btn-sm btn-block rounded-pill mb-3 col-5" %>
+      </div>
+      <div>
+        <%= link_to "新規登録", new_user_registration_path, class: "btn btn-info btn-sm btn-block rounded-pill mb-3 col-5" %>
+      </div>
+    <% end %>
+    </div>
   </div>
 </div>

@@ -6,7 +6,9 @@
 
     <div class="col-sm-6 col-md-5">
       <div class=" border-bottom border-secondary">
-        <%= image_tag @post.user.get_profile_image(50,50) %>
+        <%= link_to user_path(@post.user_id) do %>
+          <%= image_tag @post.user.get_profile_image(50,50) %>
+        <% end %>
         <%= @post.user.name %>
       </div>
       <div>

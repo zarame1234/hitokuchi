@@ -1,11 +1,12 @@
 @use '~bootstrap/scss/bootstrap';
 
 
-header {
+.navbar-brand {
   font-family: "Bradley Hand", "Segoe Print", sans-serif;
+  font-size: larger;
 }
 
-footer{
+footer, .navi-item {
   font-family: "Segoe Print", sans-serif;
 }
 

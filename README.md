@@ -37,7 +37,5 @@
 著作権を考慮し、架空のデータを扱う予定です。
 なお今後、実在するデータを利用する際には、事前に著作権保持者と契約を結んだ上で利用します。
 
-* アイコンとして以下を使用
-　Font Awesome（https://fontawesome.com/）
-* フリーイラスト素材として以下を使用
-　PAKUTASO（https://www.pakutaso.com/）
+* アイコンとして使用：Font Awesome（https://fontawesome.com/）
+* フリーイラスト素材として使用：PAKUTASO（https://www.pakutaso.com/）

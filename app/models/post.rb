@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   belongs_to :user
 
   
-  validates :body,presence: true
+  validates :body,presence: true, length: { maximum: 50 }
   validates :image,presence: true
 
   def get_image

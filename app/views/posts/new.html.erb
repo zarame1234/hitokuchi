@@ -13,7 +13,9 @@
  
 
 <%= form_with model: @post do |f| %>
-  <%= f.file_field :image, accept: "image/*", class: "W-100" %>
+  <div class="form-group">
+    <label>写真</label>
+    <p><%= f.file_field :image, accept: "image/*", class: "W-100" %></p>
   </div>
   <div class="form-group">
     <label>店名</label>

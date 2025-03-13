@@ -6,7 +6,7 @@
         <%= image_tag post.get_image, class:"card-image img-fluid" %>
       <% end %>
     
-      <div><%= image_tag post.user.get_profile_image(50,50) %></div>
+      <div class="mt-1"><%= image_tag post.user.get_profile_image(50,50) %></div>
       <div class="card-text text-truncate"><b>
         <i class="fa-regular fa-font-awesome"></i>
         <%= post.shop_name %></p>

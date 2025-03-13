@@ -26,7 +26,7 @@
           <div class="card" style="width: 13rem;" >
             <div class="card-body" >
               <%= link_to post_path(post) do %>
-                <%= image_tag post.get_image(200,200), class:"rounded" %>
+                <%= image_tag post.get_image, class:"rounded img-fluid" %>
               <% end %><br>
               <i class="fa-regular fa-font-awesome"></i>
               <%= post.shop_name %>

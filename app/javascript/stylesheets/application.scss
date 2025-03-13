@@ -5,9 +5,17 @@ header {
   font-family: "Bradley Hand", "Segoe Print", sans-serif;
 }
 
-.top-visual {
+.top-text {
+  font-family: "Segoe Print", sans-serif;
+}
+
+.top-main-visual {
   background-image: url(../../assets/images/shikun116757_TP_V.jpg);
   background-size: cover;
   background-position: center;
-  min-height: 40vh;
+  min-height: 50vh;
+}
+
+.index-image {
+  object-fit: cover;
 }

@@ -1,10 +1,12 @@
 <% if @user.errors.any? %>
-  <%= @user.errors.count %>件のエラーが発生しました。
+  <div class="alert alert-danger" role="alert">
+    <%= @user.errors.count %>件のエラーが発生しました。
   <ul>
     <% @user.errors.full_messages.each do |message| %>       
       <li><%= message %></li>
     <% end %>
   </ul>
+  </div>
 <% end %>
 
 <%= form_with model:@user do |f| %>

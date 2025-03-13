@@ -1,23 +1,24 @@
-<div class="top-visual">
-  <div class="about">
-    box
+<div class="top-main-visual">
+  <div class="top-text">
+    <p class="about text-white">あなたが見つけた、あなたのお気に入りの多食べ歩きspotを共有しよう</P>
   </div>
 </div>
+
 <div>
-  <div class="btn-wrapper h-50 ">
+  <div class="container btn-wrapper h-50 mt-4">
     <% if user_signed_in? %>
-      <div>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-info btn-sm btn-block rounded-pill col-5" %>
+    <div class="row">
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-info btn-sm btn-block rounded-pill col-5 mx-auto" %>
       </div>
     <% else %>
-      <div>
-        <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, class: "btn btn-info btn-sm btn-block rounded-pill col-5 my-3 sign_in", method: :post %>
+      <div class="row">
+        <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, class: "btn btn-info btn-sm btn-block rounded-pill col-6 mx-auto mb-3 sign_in", method: :post %>
       </div>
-      <div>
-        <%= link_to "ログイン", new_user_session_path, class: "btn btn-info btn-sm btn-block rounded-pill mb-3 col-5" %>
+      <div class="row">
+        <%= link_to "ログイン", new_user_session_path, class: "btn btn-info btn-sm btn-block rounded-pill col-6 mx-auto mb-3" %>
       </div>
-      <div>
-        <%= link_to "新規登録", new_user_registration_path, class: "btn btn-info btn-sm btn-block rounded-pill mb-3 col-5" %>
+      <div class="row">
+        <%= link_to "新規登録", new_user_registration_path, class: "btn btn-info btn-sm btn-block rounded-pill col-6 mx-auto" %>
       </div>
     <% end %>
     </div>

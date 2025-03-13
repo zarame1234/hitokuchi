@@ -22,7 +22,7 @@
       <div class="d-flex">
         <% if @post.user == current_user %>
           <%= link_to "編集", edit_post_path(@post), class: "btn btn-sm btn-info mr-1" %>
-          <%= link_to "削除", post_path(@post), method: :delete, class: "btn btn-sm btn-danger" %>
+          <%= link_to "削除", post_path(@post), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-sm btn-danger" %>
         <% end %>
       </div>
       <div >

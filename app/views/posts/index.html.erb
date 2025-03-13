@@ -1,16 +1,18 @@
 <div class="d-flex flex-wrap">
   <% @posts.each do |post| %>
-    <div class="card">
-    <div class="card-body">
+    <div class="card" style="width: 12rem;">
+      <div class="card-body">
       <%= link_to post_path(post.id) do %>
-        <%= image_tag post.get_image(150,150), class:"rounded" %>
+        <%= image_tag post.get_image(150,150), class:"card-image img-fluid" %>
       <% end %>
+      </div>
+      <div class="card-body">
       <div><%= image_tag post.user.get_profile_image(50,50) %></div>
       <div class="card-text">
         <i class="fa-regular fa-font-awesome"></i>
         <%= post.shop_name %></p>
       </div>
-        <p class="card-text"><%= post.body %></p>
+        <p class="card-text text-truncate"><%= post.body %></p>
       </div>
     </div>
   <% end %>  

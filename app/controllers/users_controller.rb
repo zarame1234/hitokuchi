@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id]) 
-    @user.destro
+    @user.destroy
     flash[:notice] = 'ユーザーを削除しました。'
     redirect_to new_user_registration_path
   end

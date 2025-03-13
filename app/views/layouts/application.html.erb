@@ -27,7 +27,7 @@
               <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                <li class="nav-item mr-3">
-                <%= link_to "新規登録", new_post_path  %>
+                <%= link_to "新規投稿", new_post_path  %>
               </li>
                <li class="nav-item mr-3">
                 <%= link_to "マイページ", user_path(current_user) %>
@@ -59,11 +59,10 @@
     </header>
 
     <main class="mb-auto m-2">
-      <div>
-       <%= flash[:notice] %>
-       <%= flash[:alert] %>
-      </div>
-    <%= yield %>
+      <% flash.each do |message_type, message| %>
+        <div class="flash-message <%= message_type %>"><%= message %></div>
+      <% end %>
+      <%= yield %>
     </main>
 
     <footer class="bg-info text-white py-4">

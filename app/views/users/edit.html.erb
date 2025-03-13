@@ -9,8 +9,12 @@
   </div>
 <% end %>
 
+<h4>プロフィール編集</h4>
 <%= form_with model:@user do |f| %>
-  <%= f.file_field :profile_image, accept: "image/*", class: "W-100" %>
+  <div class="form-group">
+    <label>プロフィール写真</label><br>
+    <%= f.file_field :profile_image, accept: "image/*", class: "W-100" %>
+  </div>
   <div class="form-group">
     <label>名前</label><br>
     <%= f.text_field :name, autofocus: true, class: "form-control col-6", placeholder: "名前" %>

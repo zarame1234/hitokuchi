@@ -9,7 +9,7 @@
     </p>
     <div>
       自己紹介<br>
-      <%= @user.introduction%><br>
+      <%= @user.introduction %><br>
       <% if @user.email != "guest@example.com" && (@user == current_user) %>
         <%= link_to "プロフィール編集", edit_user_path(current_user), class: "btn btn-info btn-sm" %>
       <% end %>

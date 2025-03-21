@@ -3,16 +3,18 @@
   <% @posts.each do |post| %>
     <div class="card" style="width: 14rem;">
       <div class="card-body">
-      <%= link_to post_path(post.id) do %>
-        <%= image_tag post.get_image, class:"card-image img-fluid" %>
-      <% end %>
-    
-      <div class="mt-1">
-      <%= image_tag post.user.get_profile_image(50,50), class:"rounded-circle" %></div>
-      <div class="card-text text-truncate"><b>
-        <i class="fa-regular fa-font-awesome"></i>
-        <%= post.shop_name %></p>
-      </b></div>
+        <div>
+          <%= link_to post_path(post.id) do %>
+            <%= image_tag post.get_image, class:"card-image img-fluid" %>
+          <% end %>
+        </div>
+      <div>
+        <%= image_tag post.user.get_profile_image(50,50), class:"rounded-circle" %></div>
+        <div class="card-text text-truncate"><b>
+          <i class="fa-regular fa-font-awesome"></i>
+          <%= post.shop_name %></p>
+          </b>
+        </div>
         <p class="card-text text-truncate"><%= post.body %></p>
       </div>
     </div>

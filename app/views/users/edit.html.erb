@@ -25,6 +25,7 @@
   </div>
   <div class="form-group">
     <%= f.submit '更新', class: "btn btn-info" %>
+    <%= link_to "退会",user_path(current_user.id), class:"destroy-user btn btn-danger", method: :delete, "data-confirm" => "本当に退会しますか？" %>
   </div>
 <% end %>
 <span><%= link_to "<<戻る", user_path(@user) %> </span>

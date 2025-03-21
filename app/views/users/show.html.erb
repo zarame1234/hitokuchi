@@ -17,11 +17,11 @@
   </div>
 </div>
 
-<div class="m-4">
+<div class="container m-4">
   <h3><ins>post</ins></h3>
-  <div class="d-flex flex-wrap" >
+  <div class="row d-flex flex-wrap" >
     <% @posts.each do |post| %>
-      <div class="card" style="width: 13rem;" >
+      <div class="card" style="width: 13rem; h-100" >
         <div class="card-body" >
           <%= link_to post_path(post) do %>
             <%= image_tag post.get_image, class:"rounded img-fluid" %>

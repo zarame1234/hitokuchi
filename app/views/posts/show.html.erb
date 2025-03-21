@@ -25,9 +25,12 @@
           <%= link_to "削除", post_path(@post), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-sm btn-danger" %>
         <% end %>
       </div>
-      <div >
-       <%= link_to "<<戻る", :back %>
+      <div class="mt-1 text-right">
+        <span class="text-right">
+          <%= link_to "ユーザーページへ>>", user_path(@post.user_id) %>
+          <br>
+          <%= link_to "投稿一覧へ>>", posts_path %>
+        </span>
       </div>
-  </div>
 </div>
 </div>

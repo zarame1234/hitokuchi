@@ -1,10 +1,12 @@
 <% if @post.errors.any? %>
-  <%= @post.errors.count %>件のエラーが発生しました。
-  <ul>
-    <% @post.errors.full_messages.each do |message| %>       
-      <li><%= message %></li>
-    <% end %>
-  </ul>
+  <div class="alert alert-danger" role="alert">
+    <%= @post.errors.count %>件のエラーが発生しました。
+    <ul>
+      <% @post.errors.full_messages.each do |message| %>       
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 
 <h4>投稿編集</h4>

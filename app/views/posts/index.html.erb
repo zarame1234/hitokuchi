@@ -2,22 +2,18 @@
   <h3><ins>posts</ins></h3>
   <div class="row justify-content-center justify-content-sm-start" >
     <% @posts.each do |post| %>
-      <div class="card" style="width: 14rem;">
-        <div class="card-body">
-          <div class="card-image">
-            <%= link_to post_path(post.id) do %>
-              <%= image_tag post.get_image, class:"card-image rounded img-fluid" %>
-            <% end %>
-          </div>
-          <div class="mt-auto mb-0">
+      <div class="card">
+        <div class="card-body index_post">
+          <%= link_to post_path(post.id) do %>
+            <%= image_tag post.get_image, class:"index_post_image rounded" %>
+          <% end %>
+          <div class="card-text mt-1">
             <%= image_tag post.user.get_profile_image(50,50) %>
-            <div class="card-text text-truncate">
-              <b>
+            <p class="text-truncate"><b>
                 <i class="fa-regular fa-font-awesome"></i>
-                <%= post.shop_name %></p>
-              </b>
-            </div>
-            <p class="card-text text-truncate">
+                <%= post.shop_name %></b>
+            </p>
+            <p class="text-truncate" >
               <%= post.body %>
             </p>
           </div>

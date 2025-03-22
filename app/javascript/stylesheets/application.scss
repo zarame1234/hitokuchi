@@ -28,3 +28,25 @@ footer, .navi-item {
   font-family: "Segoe Print", sans-serif;
   padding-top: 20vh;
 }
+
+.mypage_post {
+  width: 200px;
+  height: 250px;
+}
+
+.mypage_post_image {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.index_post {
+  width: 200px;
+  height: 300px;
+}
+
+.index_post_image {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+}

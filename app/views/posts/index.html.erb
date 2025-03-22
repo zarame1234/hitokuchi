@@ -8,14 +8,14 @@
             <%= image_tag post.get_image, class:"index_post_image rounded" %>
           <% end %>
           <div class="card-text mt-1">
-            <%= image_tag post.user.get_profile_image(50,50) %>
+            <%= link_to user_path(post.user_id) do %>
+              <%= image_tag post.user.get_profile_image(40,40) %>
+            <% end %>
             <p class="text-truncate"><b>
                 <i class="fa-regular fa-font-awesome"></i>
                 <%= post.shop_name %></b>
             </p>
-            <p class="text-truncate" >
-              <%= post.body %>
-            </p>
+            <p class="text-truncate" ><%= post.body %></p>
           </div>
         </div>
       </div>

@@ -1,31 +1,45 @@
-<h2>検索結果</h2>
-
-<table class="table table-hover table-inverse">
+<h3>検索結果</h3>
+<div class="container-fuild m-4">
   <% if @model == "user" %>
-    <thead>
-      <tr>
-        <th>プロフィール写真</th>
-        <th>名前</th>  
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @records.each do |user| %>
-        <tr>
-          <td><%= image_tag user.get_profile_image, size: '50x50' %></td>
-          <td><%= user.name %></td>
-          <td>show</td>
-        </tr>
-      <% end %>
-    </tbody>
+    <div class="row">
+      <table class="table table-hover table-inverse">
+        <thead>
+          <tr>
+            <th class="col-4">プロフィール写真</th>
+            <th class="col-4">名前</th>  
+            <th colspan="3" class="col-4"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @records.each do |user| %>
+            <tr>
+              <td><%= image_tag user.get_profile_image(50, 50) %></td>
+              <td><%= user.name %></td>
+              <td>show</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   <% else %>
-    <tbody>
+
+    <div class="row justify-content-center justify-content-sm-start" >
       <% @records.each do |post| %>
-        <tr>
-          <td><%= post.shop_name %></td>
-          <td><%= post.body %></td>
-        </tr>
-      <% end %>
-    </tbody>
+        <div class="card">
+          <div class="card-body index_post">
+            <%= link_to post_path(post.id) do %>
+              <%= image_tag post.get_image, class:"index_post_image rounded" %>
+            <% end %>
+            <div class="card-text mt-1">
+              <p class="text-truncate"><b>
+                <i class="fa-regular fa-font-awesome"></i>
+                <%= post.shop_name %></b>
+              </p>
+              <p class="text-truncate" ><%= post.body %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>  
+    </div>
   <% end %>
-</table>
+</div>

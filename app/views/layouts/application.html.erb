@@ -59,6 +59,9 @@
     </header>
 
     <main class="mb-auto m-2">
+      <div class="d-flex justify-content-end">
+        <%= render 'searches/form' %>
+      </div>
       <% flash.each do |message_type, message| %>
         <div class="flash-message <%= message_type %>"><%= message %></div>
       <% end %>

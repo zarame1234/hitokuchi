@@ -13,4 +13,16 @@ class Post < ApplicationRecord
     end
     image
   end
+
+  def self.search_for(content, method)
+    if method == 'perfect'
+      Post.where(shop_name: content)
+    elsif method == 'forward'
+      Post.where('shop_name LIKE ? OR body LIKE ?', content + '%', content + '%' )
+    elsif method == 'backward'
+      Post.where('shop_name LIKE ? OR body LIKE ?', '%' + content, '%' + content )
+    else
+      Post.where('shop_name LIKE ? OR body LIKE ?', '%' + content + '%', '%' + content + '%' )
+    end
+  end
 end

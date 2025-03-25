@@ -5,9 +5,10 @@ Rails.application.routes.draw do
     sessions: 'admin/sessions'
   }
 
-  namespace :admin do {
+  namespace :admin do 
     get 'dashboards', to: 'dashborads#index'
-  }
+    resources :users, only: [:destroy]
+  end
   
   get '/about' => 'homes#about'
   get 'searches/search'

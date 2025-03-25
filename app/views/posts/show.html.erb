@@ -1,8 +1,8 @@
 <div class="container-fuild" >
   <div class="row justify-content-center" >
-      <div class="col-7 col-sm-5 col-md-4 col-lg-3">
-        <%= image_tag @post.get_image, class:"rounded img-fluid" %>
-      </div>
+    <div class="col-7 col-sm-5 col-md-4 col-lg-2">
+      <%= image_tag @post.get_image, class:"rounded img-fluid" %>
+    </div>
 
     <div class="col-10 col-sm-6 col-md-6">
       <div class=" border-bottom border-secondary">
@@ -12,7 +12,7 @@
         <% end %>
       </div>
       <div>
-        <p><b>
+        <p class="mt-2"><b>
           <i class="fa-regular fa-font-awesome"></i>
           <%= @post.shop_name %>
         </b></p>
@@ -25,10 +25,13 @@
           <%= link_to "削除", post_path(@post), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-sm btn-danger" %>
         <% end %>
       </div>
+    </div>
+  </div>
 
-      <div class="mt-2 border-top">
-        <p>コメント件数:<%= @post.post_comments.count %></p>
-        <% @post.post_comments.each do |post_comment| %>
+    <div class="mt-4 border-top">
+      <p></p>
+      <p>コメント件数:<%= @post.post_comments.count %></p>
+      <% @post.post_comments.each do |post_comment| %>
           <div class="row">
             <div class="col-8">
               <%= image_tag post_comment.user.get_profile_image(40,40) %>
@@ -42,7 +45,6 @@
             </div>
           </div>
         <% end %>
-      </div>
 
       <div>
         <%= form_with model: [@post, @post_comment] do |f| %>
@@ -59,5 +61,5 @@
           <%= link_to "投稿一覧へ>>", posts_path %>
         </span>
       </div>
-</div>
+  </div>
 </div>

@@ -10,8 +10,8 @@
 
 <body>
   <% if admin_signed_in? %>
-    <div class="text-right">
-      <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %>
+    <div class="text-right m-3">
+      <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class:"btn btn-sm btn-info" %>
     </div>
   <% end %>
   <%= yield %>

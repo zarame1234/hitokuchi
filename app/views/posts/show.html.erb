@@ -1,10 +1,10 @@
-<div class="container" >
+<div class="container-fuild" >
   <div class="row justify-content-center" >
-      <div class="col-8 col-sm-6 col-md-5 col-lg-4">
-        <%= image_tag @post.get_image, class:"rounded img-fluid" %>
-      </div>
+    <div class="col-7 col-sm-5 col-md-4 col-lg-2">
+      <%= image_tag @post.get_image, class:"rounded img-fluid" %>
+    </div>
 
-    <div class="col-sm-6 col-md-5">
+    <div class="col-10 col-sm-6 col-md-6">
       <div class=" border-bottom border-secondary">
         <%= link_to user_path(@post.user_id) do %>
           <%= image_tag @post.user.get_profile_image(50,50) %>
@@ -12,7 +12,7 @@
         <% end %>
       </div>
       <div>
-        <p><b>
+        <p class="mt-2"><b>
           <i class="fa-regular fa-font-awesome"></i>
           <%= @post.shop_name %>
         </b></p>
@@ -25,6 +25,35 @@
           <%= link_to "削除", post_path(@post), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-sm btn-danger" %>
         <% end %>
       </div>
+    </div>
+  </div>
+
+    <div class="mt-4 border-top">
+      <p></p>
+      <p>コメント件数:<%= @post.post_comments.count %></p>
+      <% @post.post_comments.each do |post_comment| %>
+          <div class="row">
+            <div class="col-8">
+              <%= image_tag post_comment.user.get_profile_image(40,40) %>
+              <%= post_comment.user.name %>
+              <p><%= post_comment.comment %></p>
+            </div>
+            <div class="col-4 pt-3">
+              <% if post_comment.user == current_user %>
+                <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment),  method: :delete, class:"btn-sm" %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+
+      <div>
+        <%= form_with model: [@post, @post_comment] do |f| %>
+          <%= f.text_area :comment,rows: '2', placeholder: "コメントをここに入力" %>
+          <%= f.submit "送信", class:'btn btn-sm btn-secondary'%>
+        <% end %>
+      </div>
+      </div>
+
       <div class="mt-1 text-right">
         <span class="text-right">
           <%= link_to "ユーザーページへ>>", user_path(@post.user_id) %>
@@ -32,5 +61,5 @@
           <%= link_to "投稿一覧へ>>", posts_path %>
         </span>
       </div>
-</div>
+  </div>
 </div>

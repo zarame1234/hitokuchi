@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
-   root to: "homes#top"
-  devise_for :users
+
+  scope module: :public do
+    root to: "homes#top"
+    devise_for :users
+    get '/about' => 'homes#about'
+    get 'searches/search'
+    resources :posts do
+      resources :post_comments, only: [:create, :destroy]
+    end
+    resources :users, only: [:index, :create, :show, :edit, :update, :destroy ]
+  end
+
+  devise_scope :user do
+    post "users/guest_sign_in", to: "users/sessions#guest_sign_in"
+  end
+
   devise_for :admins, skip: [:registrations, :password], controllers: {
     sessions: 'admin/sessions'
   }
@@ -9,18 +23,4 @@ Rails.application.routes.draw do
     get 'dashboards', to: 'dashboards#index'
     resources :users, only: [:destroy]
   end
-  
-  get '/about' => 'homes#about'
-  get 'searches/search'
-
-  resources :posts do
-    resources :post_comments, only: [:create, :destroy]
-  end
-  
-  resources :users, only: [:index, :create, :show, :edit, :update, :destroy ]
-
-  devise_scope :user do
-    post "users/guest_sign_in", to: "users/sessions#guest_sign_in"
-  end
-
 end

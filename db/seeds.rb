@@ -40,3 +40,7 @@ Post.find_or_create_by!(shop_name: "ハンバーガー屋") do |post|
   post.body = '腹持ちがいい！'
   post.user = lucas
 end
+
+admin = Admin.find_or_create_by!(email: "admin@example.com") do |admin|
+  admin.password = "password"
+end

@@ -41,7 +41,7 @@
             </div>
             <div class="col-4">
               <% if post_comment.user == current_user %>
-                <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment),  method: :delete, class:"btn-sm" %>
+                <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), data: { confirm: '本当に削除しますか？' }, method: :delete, class:"btn-sm" %>
               <% end %>
             </div>
           </div>

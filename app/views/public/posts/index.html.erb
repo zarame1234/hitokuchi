@@ -9,14 +9,29 @@
           <% end %>
           <div class="card-text mt-1">
             <%= link_to user_path(post.user_id) do %>
-              <%= image_tag post.user.get_profile_image(40,40) %>
+              <%= image_tag post.user.get_profile_image(40,40), class:"post_icon" %>
             <% end %>
             <p class="text-truncate"><b>
                 <i class="fa-regular fa-font-awesome"></i>
                 <%= post.shop_name %></b>
             </p>
             <p class="text-truncate" ><%= post.body %></p>
-            <p><%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %></p>
+            <div class="d-flex">
+              <% if post.favorited_by?(current_user) %>
+                <p>
+                  <%= link_to post_favorite_path(post), method: :delete do %>
+                    ♥<%= post.favorites.count %>
+                  <% end %>
+                </p>
+              <% else %>
+                <p>
+                  <%= link_to post_favorite_path(post), method: :post do %>
+                    ♡<%= post.favorites.count %>
+                  <% end %>
+                </p>
+              <% end %>
+              <p class="ml-4"><%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %></p>
+            </div>
           </div>
         </div>
       </div>

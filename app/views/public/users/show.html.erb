@@ -1,6 +1,6 @@
 <div class="d-flex p-3 bg-light border-bottom">
   <div class="mr-3">
-    <%=  image_tag @user.get_profile_image(150,150), class:"rounded" %>
+    <%=  image_tag @user.get_profile_image(100,100), class:"rounded" %>
   </div>
   <div>
     <p>
@@ -8,7 +8,7 @@
       <%= @user.name %>
     </p>
     <div>
-      自己紹介<br>
+      <ins>自己紹介</ins><br>
       <%= @user.introduction %><br>
       <% if @user.email != "guest@example.com" && (@user == current_user) %>
         <%= link_to "プロフィール編集", edit_user_path(current_user), class: "btn btn-info btn-sm" %>

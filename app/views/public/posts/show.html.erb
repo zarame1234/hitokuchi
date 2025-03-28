@@ -28,8 +28,24 @@
     </div>
   </div>
 
-    <div class="mt-3 border-top border-dark">
-      <p class="mt-2">コメント件数:<%= @post.post_comments.count %></p>
+  <div class="border-top border-dark">
+    <div class="mt-2 d-flex">
+      <% if @post.favorited_by?(current_user) %>
+        <p>
+          <%= link_to post_favorite_path(@post), method: :delete do %>
+            いいね:♥<%= @post.favorites.count %> 
+          <% end %>
+        </p>
+      <% else %>
+        <p>
+          <%= link_to post_favorite_path(@post), method: :post do %>
+            いいね:♡<%= @post.favorites.count %> 
+          <% end %>
+        </p>
+      <% end %>
+      <p class="mx-3">コメント件数:<%= @post.post_comments.count %></p>
+    </div>
+
       <% @post.post_comments.each do |post_comment| %>
           <div class="row border-bottom">
             <div class="col-8">
@@ -37,7 +53,7 @@
                 <%= image_tag post_comment.user.get_profile_image(40,40) %>
                 <%= post_comment.user.name %>
               <% end %>
-              <p><%= post_comment.comment %></p>
+              <p class="ml-5"><%= post_comment.comment %></p>
             </div>
             <div class="col-4">
               <% if post_comment.user == current_user %>
@@ -48,20 +64,20 @@
         <% end %>
      
 
-      <div class="mt-1">
-        <%= form_with model: [@post, @post_comment] do |f| %>
-          <%= f.text_area :comment,rows: '2', placeholder: "コメントをここに入力" %>
-          <%= f.submit "送信", class:'btn btn-sm btn-secondary'%>
-        <% end %>
-      </div>
-      </div>
+    <div class="mt-1">
+      <%= form_with model: [@post, @post_comment] do |f| %>
+        <%= f.text_area :comment,rows: '2', placeholder: "コメントをここに入力" %>
+        <%= f.submit "送信", class:'btn btn-sm btn-secondary'%>
+      <% end %>
+    </div>
+  </div>
 
-      <div class="mt-1 text-right">
-        <span class="text-right">
-          <%= link_to "ユーザーページへ>>", user_path(@post.user_id) %>
-          <br>
-          <%= link_to "投稿一覧へ>>", posts_path %>
-        </span>
-      </div>
+    <div class="mt-1 text-right">
+      <span class="text-right">
+        <%= link_to "ユーザーページへ>>", user_path(@post.user_id) %>
+        <br>
+        <%= link_to "投稿一覧へ>>", posts_path %>
+      </span>
+    </div>
   </div>
 </div>

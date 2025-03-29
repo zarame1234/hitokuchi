@@ -30,7 +30,12 @@
             <i class="fa-regular fa-font-awesome"></i>
             <%= post.shop_name %>
           </div>
-          <p><%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %></p>
+          <div class="mt-2 d-flex">
+            <div class=<%= "favorite-" + post.id.to_s %> >
+              <%= render "public/favorites/btn", post: post %>
+            </div>
+            <p class="ml-4"><%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %></p>
+          </div>
         </div>
       </div>
     <% end %>

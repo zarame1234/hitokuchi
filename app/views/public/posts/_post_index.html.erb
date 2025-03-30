@@ -1,0 +1,28 @@
+
+      <% posts.each do |post| %>
+        <div class="card">
+          <div class="card-body index_post">
+            <%= link_to post_path(post.id) do %>
+              <%= image_tag post.get_image, class:"index_post_image rounded" %>
+            <% end %>
+            <div class="card-text mt-1">
+              <%= link_to user_path(post.user_id) do %>
+                <%= image_tag post.user.get_profile_image(40,40) %>
+              <% end %>
+              <p class="text-truncate"><b>
+                <i class="fa-regular fa-font-awesome"></i>
+                <%= post.shop_name %></b>
+              </p>
+              <p class="text-truncate" ><%= post.body %></p>
+              <div class="mt-2 d-flex">
+            <div class=<%= "favorite-" + post.id.to_s %> >
+              <%= render "public/favorites/btn", post: post %>
+            </div>
+            <p class="ml-4"><%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %></p>
+          </div>
+           
+            </div>
+          </div>
+        </div>
+      <% end %> 
+     

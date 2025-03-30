@@ -37,25 +37,7 @@
 <div class="container-fuild m-4">
   <h3><ins>post</ins></h3>
   <div class="row justify-content-center justify-content-sm-start" >
-    <% @posts.each do |post| %>
-      <div class="card">
-        <div class="mypage_post card-body">
-          <%= link_to post_path(post) do %>
-            <%= image_tag post.get_image, class:"rounded mypage_post_image" %>
-          <% end %>
-          <div class="card-text text-truncate">
-            <i class="fa-regular fa-font-awesome"></i>
-            <%= post.shop_name %>
-          </div>
-          <div class="mt-2 d-flex">
-            <div class=<%= "favorite-" + post.id.to_s %> >
-              <%= render "public/favorites/btn", post: post %>
-            </div>
-            <p class="ml-4"><%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %></p>
-          </div>
-        </div>
-      </div>
-    <% end %>
+    <%= render '/public/posts/post_index', posts:@posts %>
   </div>
 </div>
 

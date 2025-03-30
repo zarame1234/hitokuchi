@@ -1,6 +1,8 @@
+<div class="container-fuild m-2">
 <h3>フォロワー</h3>
 <% if @user.exists? %>
   <%= render 'index', users: @user %>
 <% else %>
   <p>ユーザーはいません</p>
 <% end %>
+</div>

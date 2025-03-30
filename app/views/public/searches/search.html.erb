@@ -1,28 +1,9 @@
-<h3>検索結果</h3>
-<div class="container-fuild m-4">
+<div class="container-fuild m-2">
   <% if @model == "user" %>
-    <div class="row">
-      <table class="table table-hover mx-5">
-        <thead>
-          <tr>
-            <th class="col-2">プロフィール写真</th>
-            <th class="col-2">名前</th>  
-            <th class="col-1"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @records.each do |user| %>
-            <tr>
-              <td><%= image_tag user.get_profile_image(65, 65) %></td>
-              <td><%= user.name %></td>
-              <td><%= link_to "show", user_path(user.id) %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
+    <h3>検索結果  "<%= @content %>"</h3>
+    <%= render partial: 'public/users/index', locals: {users: @records} %>
   <% else %>
-
+    <h3>検索結果  "<%= @content %>"</h3>
     <div class="row justify-content-center justify-content-sm-start" >
       <% @records.each do |post| %>
         <div class="card">

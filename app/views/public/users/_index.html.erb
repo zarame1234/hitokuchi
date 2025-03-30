@@ -1,0 +1,31 @@
+<table class='table table-hover'>
+  <thead>
+    <tr>
+      <th>プロフィール写真</th>
+      <th>名前</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.each do |user| %>
+      <tr>
+        <td>
+          <%= link_to user_path(user) do %>
+            <%= image_tag user.get_profile_image(50,50) %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to user_path(user) do %>
+            <%= user.name %></td>
+          <% end %>
+        <td>フォロー<%= user.followers.count %></td>
+        <td>フォロワー<%= user.followeds.count %></td>
+        <td>
+          <%= render 'relationships/follow_btn', user: user  %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> 

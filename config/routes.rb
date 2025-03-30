@@ -9,7 +9,12 @@ Rails.application.routes.draw do
       resource :favorite, only: [:create, :destroy]
       resources :post_comments, only: [:create, :destroy]
     end
-    resources :users, only: [:index, :create, :show, :edit, :update, :destroy ]
+    resources :users, only: [:index, :create, :show, :edit, :update, :destroy ] do
+      member do 
+        get :follows, :followers
+      end
+        resource :relationships, only: [:create, :destroy]
+    end
     devise_scope :user do
       post "users/guest_sign_in", to: "users/sessions#guest_sign_in"
     end

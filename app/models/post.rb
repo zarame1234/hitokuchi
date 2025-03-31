@@ -23,11 +23,11 @@ class Post < ApplicationRecord
     if method == 'perfect'
       Post.where(shop_name: content)
     elsif method == 'forward'
-      Post.where('shop_name LIKE ? OR body LIKE ?', content + '%', content + '%' )
+      Post.where('shop_name LIKE ? OR body LIKE ? OR address LIKE ?', content + '%', content + '%', content + '%' )
     elsif method == 'backward'
-      Post.where('shop_name LIKE ? OR body LIKE ?', '%' + content, '%' + content )
+      Post.where('shop_name LIKE ? OR body LIKE ? OR address LIKE ?', '%' + content, '%' + content, '%' + content )
     else
-      Post.where('shop_name LIKE ? OR body LIKE ?', '%' + content + '%', '%' + content + '%' )
+      Post.where('shop_name LIKE ? OR body LIKE ? OR address LIKE ?', '%' + content + '%', '%' + content + '%' , '%' + content + '%' )
     end
   end
 

@@ -4,9 +4,7 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.integer :user_id
       t.text :body
       t.string :shop_name
-      t.string :address
-      t.float :latitude
-      t.float :longitude
+     
 
       t.timestamps
     end

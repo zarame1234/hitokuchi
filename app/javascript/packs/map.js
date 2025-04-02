@@ -6,12 +6,37 @@ let map;
 
 async function initMap() {
   const { Map } = await google.maps.importLibrary("maps");
+  const {AdvancedMarkerElement} = await google.maps.importLibrary("marker")
 
   map = new Map(document.getElementById("map"), {
     center: { lat: 35.681236, lng: 139.767125 }, 
     zoom: 15,
+    mapId: "DEMO_MAP_ID",
     mapTypeControl: false
   });
+
+  try {
+    const response = await fetch("/posts.json");
+    if (!response.ok) throw new Error('Network response was not ok');
+
+    const { data: { items } } = await response.json();
+    if (!Array.isArray(items)) throw new Error("Items is not an array");
+
+    items.forEach( item => {
+      const latitude = item.latitude;
+      const longitude = item.longitude;
+      const shopName = item.shop_name;
+
+      const marker = new google.maps.marker.AdvancedMarkerElement ({
+        position: { lat: latitude, lng: longitude },
+        map,
+        title: shopName,
+      });
+    
+    });
+  } catch (error) {
+    console.error('Error fetching or processing posts:', error);
+  }
 }
 
 initMap()

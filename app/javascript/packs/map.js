@@ -26,13 +26,42 @@ async function initMap() {
       const latitude = item.latitude;
       const longitude = item.longitude;
       const shopName = item.shop_name;
+      const postImage = item.image;
+      const address = item.address;
+      const body = item.body;
 
       const marker = new google.maps.marker.AdvancedMarkerElement ({
         position: { lat: latitude, lng: longitude },
         map,
         title: shopName,
       });
+
+      const contentString = `
+      <div class="information container p-0">
+      <div class="mb-3 align-items-center">
+          <div class="mb-1">
+              <img class="thumbnail" src="${postImage}" loading="lazy" width="150" height="150">
+          </div>
+          <div>
+            <h4 class="font-weight-bold">${shopName}</h4>
+            <p class="text-muted">${address}</p>
+            <p class="lead">${body}</p>
+          </div>
+      </div>
+    `;
     
+    const infowindow = new google.maps.InfoWindow({
+      content: contentString,
+      ariaLabel: shopName,
+    });
+    
+    marker.addListener("click", () => {
+        infowindow.open({
+        anchor: marker,
+        map,
+      })
+    });
+
     });
   } catch (error) {
     console.error('Error fetching or processing posts:', error);

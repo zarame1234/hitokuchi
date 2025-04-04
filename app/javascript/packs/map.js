@@ -40,7 +40,7 @@
         });
     
         const contentString = `
-        <div class="information container map_post ">
+          <div class="information container map_post ">
             <div class="mb-1">
               <img class="thumbnail map_post_image" src="${postImage}" loading="lazy" >
             </div>
@@ -48,26 +48,36 @@
               <h1 class="h6 font-weight-bold">${shopName}</h1>
               <p class="text-muted">${address}</p>
               <p class="fs-6">${body}</p>
+              <a href="/posts/${item.id}" id="detailLink">詳細を見る</a>
             </div>
-          </div>
           </div>`;
 
         const infowindow = new google.maps.InfoWindow({
           content: contentString,
           ariaLabel: shopName,
         });
-        
+     
         marker.addListener("click", () => {
           infoWindows.forEach(info => info.close());
+          infowindow.setContent(contentString);
           infowindow.open(map, marker);
         });
+
+        google.maps.event.addListener(infowindow, 'domready', () => {
+          document.getElementById('detailLink').addEventListener('click', (event) => {
+            event.preventDefault();
+            window.location.href = document.getElementById('detailLink').getAttribute('href');
+        });
+      });
+  
         infoWindows.push(infowindow);
       });
+
     } catch (error) {
-      console.error('Error fetching or processing post images:', error);
+      console.error('Error fetching or processing post:', error);
     }
   }
   
-  initMap()
+initMap()
 
-
+   

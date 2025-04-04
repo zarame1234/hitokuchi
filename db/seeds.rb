@@ -20,7 +20,7 @@ Post.find_or_create_by!(shop_name: "おでん屋台") do |post|
   post.image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post1.jpg"), filename:"sample-post1.jpg")
   post.body = "たまたま見つけた屋台。"
   post.user = bob
-  post.address = "京都府京都市南区鳥羽北村山町2"
+  post.address = "東京都千代田区大手町2丁目2-1"
 end
 
 Post.find_or_create_by!(shop_name: "洋菓子屋") do |post|
@@ -34,7 +34,7 @@ Post.find_or_create_by!(shop_name: "ハンバーガー屋") do |post|
   post.image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post3.jpg"), filename:"sample-post3.jpg")
   post.body = '腹持ちがいい！'
   post.user = lucas
-  post.address = "静岡県富士市前田地先"
+  post.address = "東京都中央区八重洲2丁目8"
 end
 
 admin = Admin.find_or_create_by!(email: "admin@example.com") do |admin|

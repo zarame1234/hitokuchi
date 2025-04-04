@@ -44,3 +44,13 @@ p {
   width: 100%;
   height: calc(100vh - 88px - 179px);
 }
+
+.map_post{
+  width: 180px;
+}
+
+.map_post_image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}

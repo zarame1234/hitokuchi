@@ -4,9 +4,12 @@ class Post < ApplicationRecord
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
-  
   validates :body,presence: true, length: { maximum: 50 }
   validates :image,presence: true
+  validates :address, presence: true
+
+  geocoded_by :address
+  after_validation :geocode
 
   def get_image
     unless image.attached?
@@ -20,11 +23,11 @@ class Post < ApplicationRecord
     if method == 'perfect'
       Post.where(shop_name: content)
     elsif method == 'forward'
-      Post.where('shop_name LIKE ? OR body LIKE ?', content + '%', content + '%' )
+      Post.where('shop_name LIKE ? OR body LIKE ? OR address LIKE ?', content + '%', content + '%', content + '%' )
     elsif method == 'backward'
-      Post.where('shop_name LIKE ? OR body LIKE ?', '%' + content, '%' + content )
+      Post.where('shop_name LIKE ? OR body LIKE ? OR address LIKE ?', '%' + content, '%' + content, '%' + content )
     else
-      Post.where('shop_name LIKE ? OR body LIKE ?', '%' + content + '%', '%' + content + '%' )
+      Post.where('shop_name LIKE ? OR body LIKE ? OR address LIKE ?', '%' + content + '%', '%' + content + '%' , '%' + content + '%' )
     end
   end
 

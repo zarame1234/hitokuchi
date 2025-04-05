@@ -27,11 +27,14 @@
               <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                <li class="nav-item mr-3">
-                <%= link_to "新規投稿", new_post_path  %>
+                <%= link_to "新規投稿", new_post_path, data: {turbolinks: "false"}  %>
               </li>
                <li class="nav-item mr-3">
                 <%= link_to "マイページ", user_path(current_user) %>
               <li>
+              <li class="nav-item mr-3">
+                <%= link_to "map", map_path %>
+              </li>
               <li class="nav-item mr-3">
                 <%= link_to "投稿一覧", posts_path %>
               </li>
@@ -78,5 +81,6 @@
         </div>
       </div>
     </footer>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-jpostal-ja@2.14.45/jquery.jpostal.min.js"></script>
   </body>
 </html>

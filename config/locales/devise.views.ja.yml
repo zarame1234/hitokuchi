@@ -1,5 +1,10 @@
 ja:
   activerecord:
+    attributes:
+      post:
+        body: "本文"
+        image: "画像"
+        address: "住所"
     errors:
       models:
         user:
@@ -23,7 +28,15 @@ ja:
               too_short: "は%{count}文字以上に設定して下さい。"
               too_long: "は%{count}文字以下に設定して下さい。"
               invalid: "は有効でありません。"
-              confirmation: "が内容とあっていません。"    
+              confirmation: "が内容とあっていません。"  
+        post:
+          attributes:
+            image:
+              blank: "写真を選択してください"
+            address:
+              blank: "住所を入力してください"  
+            body:
+              blank: "コメントを入力してください"
     attributes:
       user:
         current_password: "現在のパスワード"

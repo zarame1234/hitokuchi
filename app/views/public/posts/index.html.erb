@@ -1,6 +1,7 @@
 
 <div class="container-fuild m-4">
   <h3><ins>posts</ins></h3>
+  <% if @posts.exists? %>
   <div class="row justify-content-center justify-content-sm-start" >
     <% @posts.each do |post| %>
       <div class="card">
@@ -29,4 +30,7 @@
       </div>
     <% end %>  
   </div>
+  <% else %>
+  <p class="mt-5 text-center">投稿がありません</p>
+  <% end %>
 </div>

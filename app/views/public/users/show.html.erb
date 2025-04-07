@@ -36,8 +36,12 @@
 
 <div class="container-fuild m-4">
   <h3><ins>post</ins></h3>
+  <% if @posts.exists? %>
   <div class="row justify-content-center justify-content-sm-start" >
     <%= render '/public/posts/post_index', posts:@posts %>
   </div>
+  <% else %>
+  <p class="mt-5 text-center">投稿がありません</p>
+  <% end %>
 </div>
 

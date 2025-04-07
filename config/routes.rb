@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
-
   scope module: :public do
     root to: "homes#top"
     devise_for :users
-    devise_scope :users do
-      get '/users', to: redirect("/users/sign_up")
-    end
-    
+
     get 'searches/search'
     resources :posts do
       resource :favorite, only: [:create, :destroy]

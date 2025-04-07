@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row no-gutters">
     <div class="col-md-6 col-sm-10 mx-sm-auto border rounded" >
-      <h4 class="text-dark bg-light py-4 mb-0 text-center">Log in</h4>
+      <h4 class="text-dark bg-light py-4 mb-0 text-center">ログイン</h4>
       <div class="form-body p-4">
 
       <div class="mx-auto text-center">
@@ -14,14 +14,14 @@
           <div class="input-group-prepend">
             <span class="input-group-text" aria-hidden="true"><i class="fa-regular fa-envelope"></i></span>
           </div>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", id:"inputEmail", placeholder: "email" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", id:"inputEmail", placeholder: "メールアドレス" %>
         </div>
 
         <div class="input-group mb-3">
           <div class="input-group-prepend">
            <span class="input-group-text" aria-hidden="true"><i class="fas fa-lock"></i></span>
           </div>
-          <%= f.password_field :password, autocomplete: "current-password", class:"form-control", placeholder:"password" %>
+          <%= f.password_field :password, autocomplete: "current-password", class:"form-control", placeholder:"パスワード" %>
         </div>
         <diV>
           <% if devise_mapping.rememberable? %>
@@ -31,9 +31,9 @@
             </div>
           <% end %>
         </div>
-        <%= f.submit "Log in", class:"btn btn-block btn-info" %>
+        <%= f.submit "ログイン", class:"btn btn-block btn-info" %>
       <% end %>
-       <%= link_to "Sign up", new_user_registration_path %>
+       <%= link_to "新規登録", new_user_registration_path %>
     </div>
   </div>
 </div>

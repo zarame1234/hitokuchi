@@ -1,4 +1,5 @@
-<%= render "devise/shared/error_messages", resource: resource %>
+
+<%= devise_error_messages %>
 <div class="container">
   <div class="row no-gutters">
     <div class="col-md-6 col-sm-10 mx-sm-auto border rounded" >
@@ -16,7 +17,7 @@
             </div>
             <%= f.text_field :name, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "名前" %>
           </div>
-
+    
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" aria-hidden="true"><i class="fa-regular fa-envelope"></i></span>

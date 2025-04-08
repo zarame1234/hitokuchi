@@ -7,7 +7,6 @@ class Public::SessionsController < Devise::SessionsController
     user_path(current_user)
   end
 
-
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in

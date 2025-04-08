@@ -11,14 +11,21 @@
 
 <h4>投稿編集</h4>
 <%= form_with model: @post do |f| %>
-  <%= f.file_field :image, accept: "image/*", class: "W-100" %>
   <div class="form-group">
-    <label>店名</label><br>
-    <%= f.text_field :shop_name, autofocus: true, class: "form-control col-6" %>
+    <label>写真</label>
+    <p><%= f.file_field :image, accept: "image/*", class: "W-100" %></p>
   </div>
   <div class="form-group">
-    <label>コメント</label><br>
-    <%= f.text_area :body, class: "form-control col-6" %>
+    <label>店名</label>
+    <p><%= f.text_field :shop_name, autofocus: true, class: "form-control col-6", placeholder: "ショップ名" %></p>
+  </div>
+  <div class="form-group">
+    <label>住所</label>
+    <p><%= f.text_field :address, autofocus: true, class: "form-control col-6", placeholder: "住所" %></p>
+  </div>
+  <div class="form-group">
+    <label>コメント</label>
+    <p><%= f.text_area :body, class: "col-6 form-control", placeholder: "コメントここに" %></p>
   </div>
   <div class="form-group">
     <%= f.submit '更新', class: "btn btn-sm btn-info" %>

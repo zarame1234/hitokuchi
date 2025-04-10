@@ -1,5 +1,4 @@
-
-
+#ユーザー
 bob = User.find_or_create_by!(email: "bob@example.com") do |user|
   user.name = "bob"
   user.password = "password"
@@ -20,7 +19,11 @@ lucas = User.find_or_create_by!(email: "lucas@example.com") do |user|
   user.profile_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-user3.jpg"), filename:"sample-user3.jpg")
 end
 
+#フォロー
+bob.following_users << [lucy, lucas]
+lucas.following_users << bob
 
+#投稿
 post1 = Post.find_or_create_by!(shop_name: "おでん屋台") do |post|
   post.image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post1.jpg"), filename:"sample-post1.jpg")
   post.body = "たまたま見つけた屋台。いい香り。"
@@ -51,15 +54,17 @@ post4 = Post.find_or_create_by!(shop_name: "たい焼き") do |post|
   post.address = "東京都江東区豊洲6丁目5-1"
 end
 
+#投稿へのコメント
 comment1 = post1.post_comments.create(comment: "ここのおでんは絶品ですね！", user: lucy)
 comment2 = post1.post_comments.create(comment: "食べてみたいです！", user: lucas)
 comment3 = post4.post_comments.create(comment: "いい香りがしそうですね", user: bob)
 
+#投稿へのいいね
 favorite1 = post2.favorites.create(user: bob)
 favorite2 = post2.favorites.create(user: lucy)
 favorite3 = post3.favorites.create(user: lucy)
 
-
+#管理者
 admin = Admin.find_or_create_by!(email: "admin@example.com") do |admin|
   admin.password = "password"
 end

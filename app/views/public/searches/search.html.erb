@@ -2,15 +2,17 @@
   <% if @model == "user" %>
     <h3>検索結果  "<%= @content %>"</h3>
     <%= render '/public/users/index', users: @records %>
-    <div class="mt-2">
-      <%= paginate @records %>
+    <div class="d-flex justify-content-center">
+      <div class="mt-2">
+        <%= paginate @records %>
+      </div>
     </div>
   <% else %>
     <h3>検索結果  "<%= @content %>"</h3>
     <div class="row justify-content-center justify-content-sm-start" >
       <%= render '/public/posts/post_index', posts: @records %>
     </div>
-    <div class="mt-2">
+    <div class="mt-4">
       <%= paginate @records %>
     </div>
   <% end %>

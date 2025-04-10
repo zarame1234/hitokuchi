@@ -19,7 +19,7 @@ class Public::PostsController < ApplicationController
   def index
     respond_to do |format|
       format.html do
-        @posts = Post.all
+        @posts = Post.page(params[:page])
       end
       format.json do
         @posts = Post.all

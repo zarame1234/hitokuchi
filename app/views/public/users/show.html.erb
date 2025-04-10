@@ -41,7 +41,13 @@
     <%= render '/public/posts/post_index', posts:@posts %>
   </div>
   <% else %>
-  <p class="mt-5 text-center">投稿がありません</p>
+    <p class="mt-5 text-center">投稿がありません</p>
   <% end %>
+  <div class="d-flex justify-content-center">
+    <div class="mt-4">
+      <%= paginate @posts %>
+    </div>
+  </div>
+
 </div>
 

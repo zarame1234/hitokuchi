@@ -96,6 +96,13 @@ p {
   object-fit: cover;
 }
 
+.post_show_image {
+  width: 300px;
+  height: 350px;
+  object-fit: cover;
+}
+
+
 #map {
   width: 100%;
   height: calc(100vh - 88px - 179px);

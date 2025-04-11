@@ -1,0 +1,64 @@
+<div class="container about_container mb-4">
+  <h2 class="about_head_text"><ins>about</ins></h2>
+  <div class="row pt-4  border-bottom">
+
+    <div class="col">
+      <div class="about-main-visual"> 
+      </div>
+      <div class="about-maintext-box">
+        <div class="about_text text-center mt-5">
+          偶然見つけた食べ歩きや、お気に入りのお店などの<br>
+          食べ歩きspotを投稿・閲覧できるサイトです。
+        </div>
+        <div class="about_text text-center mt-2">
+          あなたの一口の思い出が、<br>
+          <b>~誰かの新たな思い出につながる架け橋~</b> <br>
+          になるかもしれません。
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="how_to_box">
+    <h3 class=" ml-3 about_head_text">how to use</h3>
+    <div class="row mx-2">
+      <div class="d-flex col-lg-6 mt-3">
+        <div class="card  about_post">
+          <div class="card-body">
+            <%= image_tag 'about_post_image.jpg', class:"about_post_image rounded" %>
+            <div class="card-text mt-1">
+              <p>
+                <b><i class="fa-regular fa-font-awesome"></i>shop</b>
+              </p>
+              <p>
+                address<br>
+                deliciaous!<br>
+                <span class="heart">
+                  <i class="fas fa-heart" aria-hidden="true"></i>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="about_text ml-3 mt-5">
+          <div class="mb-4">* 投稿の写真から気になるお店をチェック</div>
+          <div>* 自分の食べ歩き記録に</div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 d-flex">
+        <div class="about_map_image pt-5">
+          <%= image_tag 'about_map_image.jpg', class:"about_post_image rounded" %>
+        </div>  
+        <div class="about_text ml-3 pt-5">
+          <div class="mb-4">* 地図から寄り道できるspotを調査</div>
+          <div>* 気になるお店はいいねで保存</div>
+        </div>
+      </div>
+      <div>
+        <%= link_to "<<トップページへ戻る", root_path %>
+      </div>
+    </div>
+  </div>
+</div>

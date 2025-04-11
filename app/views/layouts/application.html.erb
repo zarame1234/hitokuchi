@@ -26,40 +26,40 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
-               <li class="nav-item mr-3">
-                <%= link_to "新規投稿", new_post_path, data: {turbolinks: "false"}  %>
+               <li class="nav-item">
+                <%= link_to "新規投稿", new_post_path, data: {turbolinks: "false"}, class: "btn btn-light rounded-pill" %>
               </li>
-               <li class="nav-item mr-3">
-                <%= link_to "マイページ", user_path(current_user) %>
+               <li class="nav-item">
+                <%= link_to "マイページ", user_path(current_user), class: "btn btn-light rounded-pill" %>
               </li>
-              <li class="nav-item mr-3">
-                <%= link_to "投稿map", map_path %>
+              <li class="nav-item">
+                <%= link_to "投稿map", map_path, class: "btn btn-light rounded-pill" %>
               </li>
-              <li class="nav-item mr-3">
-                <%= link_to "投稿一覧", posts_path %>
+              <li class="nav-item">
+                <%= link_to "投稿一覧", posts_path, class: "btn btn-light rounded-pill" %>
               </li>
-              <li class="nav-item mr-3">
-                <%= link_to "お気に入り投稿", favorites_user_path(current_user) %>
+              <li class="nav-item">
+                <%= link_to "お気に入り", favorites_user_path(current_user), class: "btn btn-light rounded-pill" %>
               </li>
-              <li class="nav-item mr-3 ">
-                <%= link_to "about", about_path %>
+              <li class="nav-item">
+                <%= link_to "about", about_path, class: "btn btn-light rounded-pill" %>
               </li>
-              <li class="nav-item mr-3">
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              <li class="nav-item">
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-light rounded-pill" %>
               </li>
               
               <% else %>
-              <li class="nav-item mr-3 ">
-                <%= link_to "トップページ", root_path %>
+              <li class="nav-item">
+                <%= link_to "トップページ", root_path, class: "btn btn-light rounded-pill" %>
               </li>
-              <li class="nav-item mr-3 ">
-                <%= link_to "about", about_path %>
+              <li class="nav-item">
+                <%= link_to "about", about_path, class: "btn btn-light rounded-pill" %>
               </li>
-              <li class="nav-item mr-3">
-                <%= link_to "新規登録", new_user_registration_path, class:"link-success" %>
+              <li class="nav-item">
+                <%= link_to "新規登録", new_user_registration_path, class: "btn btn-light rounded-pill" %>
               </li>
-              <li class="nav-item mr-3">
-                <%= link_to "ログイン", new_user_session_path %>
+              <li class="nav-item">
+                <%= link_to "ログイン", new_user_session_path, class: "btn btn-light rounded-pill" %>
               </li>
               <% end %>
               </ul>

@@ -47,9 +47,9 @@ post3 = Post.find_or_create_by!(shop_name: "ハンバーガー屋") do |post|
   post.address = "東京都中央区八重洲2丁目8"
 end
 
-post4 = Post.find_or_create_by!(shop_name: "たい焼き") do |post|
+post4 = Post.find_or_create_by!(shop_name: "コーヒーショップ") do |post|
   post.image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post4.jpg"), filename:"sample-post4.jpg")
-  post.body = 'あんこがずっしり！'
+  post.body = 'シングルコーヒーがお勧め'
   post.user = lucas
   post.address = "東京都江東区豊洲6丁目5-1"
 end

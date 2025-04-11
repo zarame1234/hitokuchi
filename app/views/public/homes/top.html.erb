@@ -1,28 +1,27 @@
-<div class="top-main-visual d-flex">
-  <div class="top-text text-white text-center mx-auto ">
+<div class="top-main-visual">
+  <div class="top-text text-white text-center mx-auto">
       <p>あなたが見つけた、あなたのお気に入りの<br>
          食べ歩きspotを発信しよう
       </p>
   </div>
-</div>
-
-<div>
-  <div class="nav-item container btn-wrapper h-50 my-4">
+  <div class="nav-item container btn-wrapper">
     <% if user_signed_in? %>
     <div class="row">
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-info btn-sm btn-block rounded-pill col-5 mx-auto" %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-outline-light btn-sm btn-block rounded-pill col-5 mx-auto" %>
       </div>
     <% else %>
       <div class="row">
-        <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, class: "btn btn-info btn-sm btn-block rounded-pill col-6 mx-auto mb-3 sign_in", method: :post %>
+        <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, class: "btn btn-outline-light btn-sm btn-block rounded-pill col-6 mx-auto mb-3 sign_in", method: :post %>
       </div>
       <div class="row">
-        <%= link_to "ログイン", new_user_session_path, class: "btn btn-info btn-sm btn-block rounded-pill col-6 mx-auto mb-3" %>
+        <%= link_to "ログイン", new_user_session_path, class: "btn btn-sm btn-outline-light btn-block rounded-pill col-6 mx-auto mb-3" %>
       </div>
       <div class="row">
-        <%= link_to "新規登録", new_user_registration_path, class: "btn btn-info btn-sm btn-block rounded-pill col-6 mx-auto" %>
+        <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-light btn-sm btn-block rounded-pill col-6 mx-auto" %>
       </div>
     <% end %>
     </div>
   </div>
+
 </div>
+

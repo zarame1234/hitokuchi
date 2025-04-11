@@ -1,4 +1,9 @@
 @use '~bootstrap/scss/bootstrap';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .flash-message.notice {
   color: #0067C0;
@@ -20,17 +25,64 @@ p {
   font-family: "Bradley Hand", "Segoe Print", sans-serif;
   font-size: 25px;
 }
-
+ 
 .top-main-visual {
-  background-image: url("../images/shikun116757_TP_V.jpg");
+  background-image: url("../images/top_image.jpg");
   background-size: cover;
   background-position: center;
-  min-height: 50vh;
+  min-height: 73vh;
 }
 
 .top-text {
   font-family: "Segoe Print", sans-serif;
   padding-top: 20vh;
+  padding-bottom: 20vh;
+}
+
+.about_head_text {
+  font-family: "Bradley Hand", "Segoe Print", sans-serif;
+}
+
+.about_text {
+  font-family: "Segoe Print", sans-serif;
+}
+
+.about-main-visual {
+  background-image: url("../images/about_image.jpg");
+  background-size: cover;
+  background-position: 50% 70%;
+  min-height: 300px;
+}
+
+.about_container {
+  background-color:#F5F5F5;
+}
+
+.about-maintext-box {
+  min-height: 30vh;
+}
+
+.about-text-box {
+  min-height: 30vh;
+}
+
+.about_post {
+  width: 200px;
+  height: 240px;
+}
+
+ .about_post_image {
+  width: 100%;
+  height: 55%;
+  object-fit: cover;
+}
+
+.heart {
+  color: red;
+}
+
+.about_map_image {
+  width: 300px;
 }
 
 .index_post {

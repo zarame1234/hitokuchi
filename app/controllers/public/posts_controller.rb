@@ -40,7 +40,7 @@ class Public::PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update(post_params)
      flash[:notice] = "更新に成功しました。"
-     redirect_to user_path(@post.user_id)
+     redirect_to post_path(@post)
     else 
       flash.now[:alert] = "更新に失敗しました。"
       render :edit

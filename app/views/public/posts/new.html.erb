@@ -3,9 +3,9 @@
     <%= @post.errors.count %>件のエラーが発生しました。
     <ul>
       <% ['image', 'address', 'body'].each do |field| %>
-      <% @post.errors.full_messages_for(field).each do |message| %>  
-        <li><%= message %></li>
-      <% end %>
+        <% @post.errors.full_messages_for(field).each do |message| %>  
+          <li><%= message %></li>
+        <% end %>
       <% end %>
     </ul>
   </div>

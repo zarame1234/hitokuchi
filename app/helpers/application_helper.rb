@@ -4,7 +4,7 @@ module ApplicationHelper
     return "" if resource.errors.empty?
     html = ""
 
-    messages_order = ['name', 'email', 'password', ]
+    messages_order = ['name', 'email', 'password']
     
     messages_order.each do |field|
       error_messages = resource.errors.full_messages_for(field)

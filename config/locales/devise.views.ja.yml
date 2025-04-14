@@ -1,10 +1,5 @@
 ja:
   activerecord:
-    attributes:
-      post:
-        body: "本文"
-        image: "画像"
-        address: "住所"
     errors:
       models:
         user:
@@ -32,12 +27,16 @@ ja:
         post:
           attributes:
             image:
-              blank: "写真を選択してください"
+              blank: "を選択してください"
             address:
-              blank: "住所を入力してください"  
+              blank: "を入力してください"  
             body:
-              blank: "コメントを入力してください"
+              blank: "を入力してください"
     attributes:
+      post:
+        body: "コメント"
+        image: "写真"
+        address: "住所"
       user:
         current_password: "現在のパスワード"
         name: 名前
@@ -46,6 +45,7 @@ ja:
         password_confirmation: "確認用パスワード"
         remember_me: "次回から自動的にログイン"
     models:
+      post: "投稿"
       user: "ユーザ"
   devise:
     confirmations:

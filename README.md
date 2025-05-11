@@ -24,7 +24,8 @@
 * 食べ歩いた記録を残したい時
 
 ## 設計書
-後ほど作成予定
+- UIFlows(PNG)：https://drive.google.com/file/d/1pz_e24D1AZ2ocwJMokn9yqJF3aNvrFek/view?usp=drive_link
+
 
 ## 開発環境
 - OS：Linux(CentOS)

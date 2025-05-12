@@ -1,5 +1,5 @@
 <div class="container-fuild m-4">
-  <h3><ins>favorited post</ins></h3>
+  <h2><ins>favorited post</ins></h2>
   <% if @favorite_posts.exists? %>
     <div class="row justify-content-center justify-content-sm-start" >
       <%= render '/public/posts/post_index', posts:@favorite_posts %>

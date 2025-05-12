@@ -25,7 +25,7 @@
 
 ## 設計書
 - UIFlows(PNG)：https://drive.google.com/file/d/1pz_e24D1AZ2ocwJMokn9yqJF3aNvrFek/view?usp=drive_link
-
+- ER図：https://drive.google.com/file/d/1I5dQlqgLNJKWZA1I0TFCq_fTX0LPOf2a/view?usp=drive_link
 
 ## 開発環境
 - OS：Linux(CentOS)

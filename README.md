@@ -24,7 +24,6 @@
 * 食べ歩いた記録を残したい時
 
 ## 設計書
-- インフラ設計書：
 - UIFlows(PNG)：https://drive.google.com/file/d/1pz_e24D1AZ2ocwJMokn9yqJF3aNvrFek/view?usp=drive_link
 - ER図：https://drive.google.com/file/d/1I5dQlqgLNJKWZA1I0TFCq_fTX0LPOf2a/view?usp=drive_link
 

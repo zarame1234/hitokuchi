@@ -44,4 +44,5 @@
 なお今後、実在するデータを利用する際には、事前に著作権保持者と契約を結んだ上で利用します。
 
 * アイコンとして使用：Font Awesome（https://fontawesome.com/）
-* フリーイラスト素材として使用：PAKUTASO（https://www.pakutaso.com/）,O-DAN(https://o-dan.net/ja/)
+* フリーイラスト素材として使用：PAKUTASO(https://www.pakutaso.com/)
+                           O-DAN(https://o-dan.net/ja/)

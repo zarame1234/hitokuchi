@@ -23,6 +23,16 @@
 * これから向かう土地の手軽に買える食を調べたい時
 * 食べ歩いた記録を残したい時
 
+## 機能
+- ゲストログイン・会員機能
+- 投稿機能
+- キーワード検索機能（投稿・ユーザー）
+- ブックマーク機能・ブックマーク一覧表示
+- フォロー機能
+- コメント機能
+- 地図表示機能（Google Maps API/Geocorder)
+- ユーザー管理機能（管理者）
+
 ## 設計書
 - ER図：https://drive.google.com/file/d/1I5dQlqgLNJKWZA1I0TFCq_fTX0LPOf2a/view?usp=drive_link
 

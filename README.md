@@ -43,7 +43,7 @@
 - JSライブラリ：jQuery
 
 ## インフラ構成
-- インフラ構成図：https://drive.google.com/file/d/111CkbNJJwPWZJ7Qf-0m-szP5t418eqK8/view?usp=sharing
+- インフラ構成図：https://drive.google.com/file/d/1zIGDDere1DtB3QTSuvGiBHt1x9VMJJAu/view?usp=sharing
 - クラウド：AWS
 - ネットワーク：VPC
 - 仮想サーバー：EC2

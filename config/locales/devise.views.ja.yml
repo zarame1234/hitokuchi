@@ -24,6 +24,8 @@ ja:
               too_long: "は%{count}文字以下に設定して下さい。"
               invalid: "は有効でありません。"
               confirmation: "が内容とあっていません。"  
+            introduction:
+              too_long: "は50文字以内で入力してください"
         post:
           attributes:
             image:
@@ -42,6 +44,7 @@ ja:
         current_password: "現在のパスワード"
         name: 名前
         email: "メールアドレス"
+        introduction: "自己紹介"
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "次回から自動的にログイン"

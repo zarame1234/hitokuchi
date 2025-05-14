@@ -32,6 +32,7 @@ ja:
               blank: "を入力してください"  
             body:
               blank: "を入力してください"
+              too_long: "は50文字以内で入力してください"
     attributes:
       post:
         body: "コメント"

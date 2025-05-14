@@ -19,10 +19,10 @@ class Public::PostsController < ApplicationController
   def index
     respond_to do |format|
       format.html do
-        @posts = Post.page(params[:page])
+        @posts = Post.order(created_at: :desc).page(params[:page])
       end
       format.json do
-        @posts = Post.all
+        @posts = Post.order(created_at: :desc)
       end
     end
   end

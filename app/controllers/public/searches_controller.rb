@@ -6,7 +6,7 @@ class Public::SearchesController < ApplicationController
     if @model == 'user'
       @records = User.search_for(@content, @method).page(params[:page])
     else
-      @records = Post.search_for(@content, @method).page(params[:page])
+      @records = Post.search_for(@content, @method).order(created_at: :desc).page(params[:page])
     end
   end
 end

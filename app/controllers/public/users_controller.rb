@@ -4,7 +4,7 @@ class Public::UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.page(params[:page])
+    @posts = @user.posts.order(created_at: :desc).page(params[:page])
     @following_users = @user.following_users
     @follower_users = @user.follower_users
   end

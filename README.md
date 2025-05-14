@@ -34,7 +34,7 @@
 - ユーザー管理機能（管理者）
 
 ## 設計書
-- ER図：https://drive.google.com/file/d/12j_mcxlB5RxD1jYYxx1cuEIOHkRmMqVp/view?usp=sharing
+- ER図：https://drive.google.com/file/d/1JR7x2nURhQi2cFhyhTjSOZHPjEB-rmPb/view?usp=sharing
 
 ## 開発環境
 - OS：Linux(CentOS)

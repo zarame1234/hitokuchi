@@ -25,6 +25,5 @@ RSpec.describe Post, type: :model do
       expect(post).to be_invalid
       expect(post.errors[:body]).to include("は50文字以内で入力してください")
     end
-
   end
 end

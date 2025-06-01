@@ -1,5 +1,3 @@
-name: Rails CI/CD
-
 on:
   push:
     branches: [main]
@@ -8,8 +6,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Deploy
+    - uses: actions/setup-node@v3
+    - name: Deploy 
       env:
         PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         USER_NAME: ${{ secrets.USER_NAME }}
